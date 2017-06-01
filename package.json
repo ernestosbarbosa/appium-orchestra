@@ -11,10 +11,13 @@
         "url": "https://github.com/jlipps/appium-orchestra/issues"
     },
     "engines": {
-         "node": ">= 8.0"
+        "node": ">= 8.0"
     },
     "directories": {
         "lib": "./lib"
     },
-    "dependencies": {}
+    "main": "index.js",
+    "dependencies": {
+        "wd": "^1.2.0"
+    }
 }
