@@ -18,6 +18,9 @@ const NOTE_INDEXES = { 'd#': 1, 'eb': 1, 'e': 2, 'e#': 3, 'f': 3, 'f#': 4,
   20, 'Bb': 20, 'B': 21, 'B#': 22, 'C': 22, 'C#': 23, 'Db': 23, 'D': 24,
 };
 
+const DURATION_RATIO = 0.75; // what fraction of actual duration to hold key
+const DURATION_THRESH = 0.25; // below which to not hold at all
+
 function posForNote (note, keyboard) {
   if (keyboard !== 1 && keyboard !== 2) {
     throw new Error(`Keyboard '${keyboard}' was not 1 or 2`);
@@ -74,14 +77,24 @@ class Piano extends Instrument {
     this.curOctave = oct;
   }
 
-  async playNote (note, noteDur) {
-    noteDur *= 0.75; // shouldn't hold note for fullness of duration
-    if (noteDur < 0.25) {
+  getRealDuration (durationSecs) {
+    durationSecs *= DURATION_RATIO;
+    if (durationSecs < DURATION_THRESH) {
       // if it's going to be quite short, just bypass duration altogether
-      noteDur = null;
+      durationSecs = null;
     }
+    return durationSecs;
+  }
+
+
+  async playNote (note, durationSecs) {
     let pos = posForNote(note, this.curOctave);
-    await this.tapPos(pos.x, pos.y, noteDur);
+    await this.tapPos(pos.x, pos.y, this.getRealDuration(durationSecs));
+  }
+
+  async playChord (chord, durationSecs) {
+    const positions = chord.map(note => posForNote(note, this.curOctave));
+    await this.multiPos(positions, this.getRealDuration(durationSecs));
   }
 
   async playScale () {

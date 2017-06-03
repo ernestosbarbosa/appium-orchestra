@@ -1,6 +1,6 @@
 const INTRO = [
-  'r4 G8 E8 G8 G4 E4 r8 G8 E8 G8 G4 A8',
-  'r4 A8 G8 A8 A4 A4 r8 A8 G8 A8 G4 E8'
+  'r4 G/E8 G/E4. G/E4 '.repeat(2),
+  'r4 A/E8 A/E4. A/E4 '.repeat(2)
 ];
 const VERSE = [];
 const BRIDGE = [];
