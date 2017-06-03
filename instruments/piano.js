@@ -36,21 +36,22 @@ function posForNote (note, keyboard) {
 
 class Piano extends Instrument {
 
-  constructor () {
-    super(1);
+  constructor (opts) {
+    const defaults = {
+      curOctave: 1,
+      name: 'unnamed piano',
+      caps: {
+        platformName: 'Android',
+        deviceName: 'Android Emulator',
+        app: path.resolve(__dirname, '..', 'apps', 'souvey.musical_4.0.5.apk'),
+        automationName: 'UiAutomator2'
+      }
+    };
+    super(Object.assign({}, defaults, opts));
   }
 
-  async start (host, port, udid = null) {
-    let caps = {
-      platformName: 'Android',
-      deviceName: 'Android Emulator',
-      app: path.resolve(__dirname, '..', 'apps', 'souvey.musical_4.0.5.apk'),
-      automationName: 'UiAutomator2'
-    };
-    if (udid) {
-      caps.udid = udid;
-    }
-    await super.start(caps, host, port);
+  async start () {
+    await super.start();
     await this.driver.setImplicitWaitTimeout(5000);
     let el = await this.driver.elementByXPath("//android.widget.TextView[@text='Keyboard']");
     await el.click();
