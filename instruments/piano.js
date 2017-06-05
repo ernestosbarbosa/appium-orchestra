@@ -97,6 +97,14 @@ class Piano extends Instrument {
     await this.multiPos(positions, this.getRealDuration(durationSecs));
   }
 
+  async doShift (shift) {
+    if (shift === 'v' && this.curOctave > 1) {
+      await this.chooseOctave(this.curOctave - 1);
+    } else if (shift === '^' && this.curOctave < 8) {
+      await this.chooseOctave(this.curOctave + 1);
+    }
+  }
+
   async playScale () {
     let score = 'c4 d8 E8 F8 G8 A8 B8 C4 ' +
                 'D8^ e8 f8 g8 a8 b8 c4 ' +
