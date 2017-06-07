@@ -43,10 +43,13 @@ class Piano extends Instrument {
     const defaults = {
       curOctave: 1,
       name: 'unnamed piano',
+      choosesInstrument: false,
       caps: {
         platformName: 'Android',
         deviceName: 'Android Emulator',
         app: path.resolve(__dirname, '..', 'apps', 'souvey.musical_4.0.5.apk'),
+        appPackage: 'souvey.musical',
+        appActivity: '.activities.Keyboard',
         automationName: 'UiAutomator2'
       }
     };
@@ -56,9 +59,6 @@ class Piano extends Instrument {
   async start () {
     await super.start();
     await this.driver.setImplicitWaitTimeout(5000);
-    let el = await this.driver.elementByXPath("//android.widget.TextView[@text='Keyboard']");
-    await el.click();
-    await Promise.delay(800);
     // tap the down octave button enough times to get to the bottom
     for (let i = 0; i < 2; i++) {
       await this.tapPos(K1_OCT_DOWN_BIG.x, K1_OCT_DOWN_BIG.y);
@@ -70,7 +70,9 @@ class Piano extends Instrument {
       await Promise.delay(200);
     }
     // for some reason the keyboard needs time to warm up
-    await Promise.delay(7000);
+    if (!this.choosesInstrument) {
+      await Promise.delay(7000);
+    }
   }
 
   async chooseOctave (oct) {
