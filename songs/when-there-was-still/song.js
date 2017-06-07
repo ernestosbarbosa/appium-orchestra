@@ -36,7 +36,7 @@ const SCORE_DRUMS = require('./score-drums');
 
 const LYRICS = require('./lyrics');
 
-const TEMPO = 110;
+const TEMPO = 108;
 
 async function run () {
   let p1 = new PianoGuitar(GUITAR);
