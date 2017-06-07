@@ -38,10 +38,10 @@ const CHORUS_OUT = [
   BASIC_F.repeat(2),
   BASIC_AM, BASIC_G
 ];
-const INTRO_2 = BASIC_C.repeat(2);
+const INTRO_2 = [BASIC_C.repeat(2)];
 const OUTRO = INTRO_2.concat([
   BASIC_C,
-  'E/G/C1 E/G/C1'
+  'E/G/C1 '
 ]);
 
 const SONG = [].concat(

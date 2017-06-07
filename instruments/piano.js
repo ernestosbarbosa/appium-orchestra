@@ -26,7 +26,7 @@ function posForNote (note, keyboard) {
     throw new Error(`Keyboard '${keyboard}' was not 1 or 2`);
   }
   if (!NOTE_INDEXES[note]) {
-    throw new Error(`Invalid note '${note}' for instrument ${this.name}`);
+    throw new Error(`Invalid note '${note}'`);
   }
   let pos = {y: (keyboard === 1 ? KEYBOARD1_Y : KEYBOARD2_Y)};
   // get right-side x value of key

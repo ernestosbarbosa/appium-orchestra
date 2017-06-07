@@ -41,7 +41,7 @@ const CHORUS_OUT = [
 const INTRO_2 = [BASIC_C.repeat(2)];
 const OUTRO = INTRO_2.concat([
   BASIC_C,
-  'c1 c1'
+  'c1 '
 ]);
 
 const SONG = [].concat(

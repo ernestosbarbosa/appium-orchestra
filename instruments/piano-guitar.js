@@ -11,6 +11,7 @@ class PianoGuitar extends Piano {
     await this.tapPos(INST_CHOOSER_X, INST_CHOOSER_Y);
     await Promise.delay(1000);
     await this.tapPos(INST_CHOOSER_X, GUITAR_Y);
+    await Promise.delay(1000);
   }
 }
 

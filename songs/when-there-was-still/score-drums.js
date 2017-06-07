@@ -9,10 +9,10 @@ const CHORUS = [
   'k/c4 k/c4 s8 k8 k8 s/ta8 '.repeat(16)
 ];
 const CHORUS_OUT = VERSE;
-const INTRO_2 = HALF_BASE_2.repeat(2);
+const INTRO_2 = [HALF_BASE_2.repeat(2)];
 const OUTRO = INTRO_2.concat([
   HALF_BASE_1,
-  'k/h/c1 r1'
+  'k/h/c1 '
 ]);
 
 const SONG = [].concat(

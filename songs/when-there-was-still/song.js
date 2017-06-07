@@ -43,7 +43,7 @@ async function run () {
   let p2 = new Piano(PIANO2);
   let r = new Drums(DRUMS);
   let d = new Director(TEMPO);
-  let s = new Speaker(LYRICS, '/tmp/song.txt', 'Vicki', 120);
+  let s = new Speaker(LYRICS, '/tmp/song.txt', 'Alex', 120);
   d.addPart(p1, SCORE_GUITAR);
   d.addPart(p2, SCORE_PIANO2);
   d.addPart(r, SCORE_DRUMS);

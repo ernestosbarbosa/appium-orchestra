@@ -15,14 +15,14 @@ function p2y (p) {
 }
 
 const POS_PCT_MAP = {
-  'k': [62.1, 75.7],
-  's': [36.4, 76.4],
-  'h': [12.5, 76.2],
-  'i': [86.4, 26.7],
-  'c': [12.8, 24.5],
-  'ta': [86.9, 74.5],
-  'tb': [36.4, 23.3],
-  'tc': [61.9, 27.1],
+  k: [62.1, 75.7],
+  s: [36.4, 76.4],
+  h: [12.5, 76.2],
+  i: [86.4, 26.7],
+  c: [12.8, 24.5],
+  ta: [86.9, 74.5],
+  tb: [36.4, 23.3],
+  tc: [61.9, 27.1],
 };
 
 let POS_MAP = {};
@@ -59,6 +59,9 @@ class Drums extends Instrument {
 
   async playChord (chord) {
     const ps = chord.map(note => {
+      if (!POS_MAP[note]) {
+        throw new Error(`No such note '${note}'`);
+      }
       return {x: POS_MAP[note][0], y: POS_MAP[note][1]};
     });
     await this.multiPos(ps);
