@@ -7,19 +7,10 @@ const GUITAR_Y = 400;
 
 class PianoGuitar extends Piano {
 
-  constructor (opts) {
-    const defaults = {
-      choosesInstrument: true
-    };
-    super(Object.assign({}, defaults, opts));
-  }
-
-  async start () {
-    await super.start();
+  async chooseInstrument () {
     await this.tapPos(INST_CHOOSER_X, INST_CHOOSER_Y);
     await Promise.delay(1000);
     await this.tapPos(INST_CHOOSER_X, GUITAR_Y);
-    await Promise.delay(8000);
   }
 }
 

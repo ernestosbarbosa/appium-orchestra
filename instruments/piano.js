@@ -26,7 +26,7 @@ function posForNote (note, keyboard) {
     throw new Error(`Keyboard '${keyboard}' was not 1 or 2`);
   }
   if (!NOTE_INDEXES[note]) {
-    throw new Error(`Invalid note '${note}'`);
+    throw new Error(`Invalid note '${note}' for instrument ${this.name}`);
   }
   let pos = {y: (keyboard === 1 ? KEYBOARD1_Y : KEYBOARD2_Y)};
   // get right-side x value of key
@@ -43,7 +43,6 @@ class Piano extends Instrument {
     const defaults = {
       curOctave: 1,
       name: 'unnamed piano',
-      choosesInstrument: false,
       caps: {
         platformName: 'Android',
         deviceName: 'Android Emulator',
@@ -56,9 +55,13 @@ class Piano extends Instrument {
     super(Object.assign({}, defaults, opts));
   }
 
+  async chooseInstrument () {
+  }
+
   async start () {
     await super.start();
     await this.driver.setImplicitWaitTimeout(5000);
+    await this.chooseInstrument();
     // tap the down octave button enough times to get to the bottom
     for (let i = 0; i < 2; i++) {
       await this.tapPos(K1_OCT_DOWN_BIG.x, K1_OCT_DOWN_BIG.y);
@@ -70,9 +73,7 @@ class Piano extends Instrument {
       await Promise.delay(200);
     }
     // for some reason the keyboard needs time to warm up
-    if (!this.choosesInstrument) {
-      await Promise.delay(7000);
-    }
+    await Promise.delay(7000);
   }
 
   async chooseOctave (oct) {
