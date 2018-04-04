@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.Soundpad {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  background-color: #000;
+}
+.Soundpad_key {
+  width: calc(33.3% - 6px);
+  margin: 3px;
+  border-radius: 5px;
+  border: 5px solid #555;
+  background-color: #666;
+  transition: background-color .03s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+}
+
+.Soundpad_key > div {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #ccc;
+  font-size: 20px;
+}
+
+.Soundpad_key.is-playing {
+  background-color: #999;
+}

@@ -17,10 +17,14 @@
         "lib": "./lib"
     },
     "main": "index.js",
+    "scripts": {
+        "websampler": "static-server lib/websampler"
+    },
     "dependencies": {
         "asyncbox": "^2.3.1",
         "bluebird": "^3.5.0",
         "lodash": "^4.17.4",
+        "static-server": "^2.2.0",
         "wd": "^1.2.0"
     }
 }

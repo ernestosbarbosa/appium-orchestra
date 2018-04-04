@@ -1,2 +1,4 @@
 node_modules
 apps
+lib/websampler/samples
+package-lock.json*
