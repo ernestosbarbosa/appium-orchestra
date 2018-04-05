@@ -51,6 +51,14 @@ const TAG_2 = TAG_PART.concat(
   ['e2 b2', 'e1', 'e2 b2. b4 b4 b4']
 );
 
+const OUTRO = [
+  'b4 b4. b8 b4', 'f#4 C#4. f#8 C#4',
+  'e4 b2 r8 b8', 'b4 b2 b4',
+  'g#4 D#2 g#4', 'f#4 b4. f#8 b4',
+  'e4 b2 e2 e4 b4 e4',
+  'b0', 'r0'
+];
+
 const SONG = [].concat(
   LEADIN,
   INTRO,
@@ -64,6 +72,7 @@ const SONG = [].concat(
   BRIDGE,
   CHORUS,
   TAG_2,
+  OUTRO,
 ).join(" ");
 
 module.exports = SONG;

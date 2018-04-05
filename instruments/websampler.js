@@ -63,7 +63,6 @@ class Sampler extends Instrument {
   }
 
   async playNote (note) {
-    console.log(`note is ${JSON.stringify(note)}`);
     // in our case a note is actually a sample name, so just remove { and }
     note = note.replace(/{|}/g, '');
     if (!this.sampleEls[note]) {
@@ -80,7 +79,6 @@ class Sampler extends Instrument {
   }
 
   async playChord (chord) {
-    console.log(`chord is: ${JSON.stringify(chord)}`);
     const positions = chord.map(note => {
       note = note.replace(/{|}/g, '');
       return {

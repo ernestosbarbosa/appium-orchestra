@@ -70,6 +70,14 @@ const TAG_2 = TAG_PART.concat(
   ]
 );
 
+const OUTRO = [
+  '{02-strum-Bmaj}1', '{02-strum-F#maj}1',
+  '{02-strum-Emaj}1', '{02-strum-Bmaj}1',
+  '{02-strum-G#min}1', '{02-strum-Bmaj}1',
+  '{02-strum-Emaj}1', '{02-strum-Emaj}2 {02-strum-Emaj}2',
+  '{07-lasthit-Bmaj}0', 'r0'
+];
+
 const SONG = [].concat(
   LEADIN,
   INTRO,
@@ -83,6 +91,7 @@ const SONG = [].concat(
   BRIDGE,
   CHORUS,
   TAG_2,
+  OUTRO,
 ).join(" ");
 
 module.exports = SONG;
