@@ -7,12 +7,12 @@ const VERSE = [
   'f#4. C#2 r8 ', 'f#4. C#2 r8 ',
 ];
 
-const BRIDGE_1 = [
+const BRIDGE_PART = [
   'E2 E4 F#4', 'C#2 C#2',
   'a#2 a#4 C#4', 'b2 b2'
 ];
 
-const BRIDGE = BRIDGE_1.concat(BRIDGE_1, [
+const BRIDGE = BRIDGE_PART.concat(BRIDGE_PART, [
   'E2 E4 F#4', 'C#2 C#2',
   'a#2 a#4 b4', 'C#2 C#2',
   'g#4 g#2.', 'b2 b4 e4',
