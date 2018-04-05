@@ -47,8 +47,8 @@ class Piano extends Instrument {
         platformName: 'Android',
         deviceName: 'Android Emulator',
         app: path.resolve(__dirname, '..', 'apps', 'souvey.musical_4.0.5.apk'),
-        appPackage: 'souvey.musical',
-        appActivity: '.activities.Keyboard',
+        //appPackage: 'souvey.musical',
+        //appActivity: '.activities.Keyboard',
         automationName: 'UiAutomator2'
       }
     };

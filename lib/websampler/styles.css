@@ -19,6 +19,7 @@ html, body {
   padding: 3px;
   background-color: #000;
 }
+
 .Soundpad_key {
   width: calc(33.3% - 6px);
   margin: 3px;
@@ -32,6 +33,30 @@ html, body {
   align-items: center;
   justify-content: center;
   touch-action: none;
+}
+
+.Soundpad_key_1 {
+  width: 100%;
+}
+
+.Soundpad_key_2 {
+  width: calc(50% - 3px);
+}
+
+.Soundpad_key_3 {
+  width: calc(33.3% - 6px);
+}
+
+.Soundpad_key_4 {
+  width: calc(25% - 9px);
+}
+
+.Soundpad_key_5 {
+  width: calc(20% - 12px)
+}
+
+.Soundpad_key_6 {
+  width: calc(16.67% - 15px);
 }
 
 .Soundpad_key > div {
