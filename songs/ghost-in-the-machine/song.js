@@ -26,7 +26,7 @@ const LYRICS = require('./lyrics');
 
 async function run () {
   let eg = new Sampler({
-    port: 4444, name: 'Electrics',
+    port: 4444, name: 'Electrics', staticDelayMs: 100,
     endpoint: 'ghost-guitar', caps: CAPS_ELECS,
     rect: {width: 840, height: 525, x: 0, y: 525},
   });

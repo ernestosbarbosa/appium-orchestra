@@ -59,14 +59,14 @@ const TAG_1 = [
 
   [1, "I am the perfect"],
   [1, "simulation"],
-  [2, "of\j"],
+  [2, "of\n"],
   [1, "The not-so-perfect"],
   [1, "person that I"],
   [2, "was\n"],
 
   [1, "I am the perfect"],
   [1, "simulation"],
-  [2, "of\j"],
+  [2, "of\n"],
   [1, "The not-so-perfect"],
   [1, "person that I"],
   [2, "was\n"],
@@ -89,14 +89,14 @@ const TAG_2 = [
 
   [1, "I am the perfect"],
   [1, "simulation"],
-  [2, "of\j"],
+  [2, "of\n"],
   [1, "The not-so-perfect"],
   [1, "person that I"],
   [2, "was\n"],
 
   [1, "I am the perfect"],
   [1, "simulation"],
-  [2, "of\j"],
+  [2, "of\n"],
   [1, "The not-so-perfect"],
   [1, "person that I"],
   [2, "was\n"],
