@@ -18,7 +18,8 @@
     },
     "main": "index.js",
     "scripts": {
-        "websampler": "static-server lib/websampler"
+        "websampler": "static-server -p 9080 lib/websampler",
+        "webwriter": "static-server -p 9090 lib/webwriter"
     },
     "dependencies": {
         "asyncbox": "^2.3.1",

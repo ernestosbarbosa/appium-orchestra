@@ -13,6 +13,7 @@ class Sampler extends Instrument {
       name: 'Sampler Instrument',
       endpoint: '',
       tapByPos: false,
+      rect: null,
       caps: {
         platformName: 'iOS',
         platformVersion: '11.2',
@@ -26,6 +27,11 @@ class Sampler extends Instrument {
 
   async start () {
     await super.start();
+    if (this.rect) {
+      let handle = await this.driver.windowHandle();
+      await this.driver.setWindowSize(this.rect.width, this.rect.height, handle);
+      await this.driver.setWindowPosition(this.rect.x, this.rect.y, handle);
+    }
     await this.driver.get(`${SAMPLER_HOST}/${this.endpoint}`);
     await this.findSamplesFromScoreAnalysis();
     //await this.playNote('{00-silence}');
